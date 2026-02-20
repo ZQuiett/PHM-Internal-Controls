@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHM Internal Control Essentials</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        :root {
+            --phm-black: #000000;
+            --phm-gold: #FFC72C;
+            --phm-gold-dark: #D4A017;
+        }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f3f4f6;
+        }
+
+        .phm-gradient {
+            background: linear-gradient(135deg, var(--phm-black) 0%, #1a1a1a 100%);
+        }
+
+        /* Card Container */
+        .control-card { 
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #e5e7eb;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        /* Hover Overlay */
+        .principles-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 20;
+            pointer-events: none;
+        }
+
+        .control-card:hover .principles-overlay {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .control-card:hover { 
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: var(--phm-gold);
+        }
+
+        .gold-text { color: var(--phm-gold); }
+        .gold-border { border-color: var(--phm-gold); }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-6xl mx-auto bg-white shadow-2xl rounded-3xl overflow-hidden">
+        
+        <!-- PHM Branded Header -->
+        <div class="phm-gradient text-white p-8 md:p-12 text-center relative overflow-hidden border-b-8 gold-border">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-white opacity-5 rounded-full -mr-48 -mt-48"></div>
+            
+            <div class="relative z-10 flex flex-col items-center">
+                <!-- Official PHM Logo (Link) -->
+                <a href="https://www.phmschools.org/" target="_blank" class="mb-8 p-1 bg-white rounded-lg shadow-2xl block hover:scale-105 transition-transform">
+                    <img src="https://www.phmschools.org/wp-content/uploads/2023/07/image_2023-07-06_143706965.png" 
+                         alt="PHM Logo" 
+                         class="h-20 md:h-24 object-contain">
+                </a>
+
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight uppercase">
+                    The Shield of <span class="gold-text">Stewardship</span>
+                </h1>
+                <p class="text-slate-300 text-lg md:text-2xl max-w-3xl mx-auto font-light leading-relaxed">
+                    Excellence built on the <span class="text-white font-semibold italic underline decoration-amber-500">17 Foundational Principles</span>
+                </p>
+                <p class="mt-4 text-amber-500 text-sm font-bold uppercase tracking-widest animate-pulse">Hover over cards to see core principles</p>
+            </div>
+        </div>
+
+        <!-- The 5 Components Grid -->
+        <div class="p-8 md:p-14 bg-white">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- 1. Control Environment -->
+                <div class="control-card bg-white p-8 rounded-3xl border-t-8 gold-border">
+                    <div class="principles-overlay">
+                        <h3 class="text-amber-500 font-black text-sm uppercase mb-4 tracking-widest border-b border-amber-500/30 pb-2">Control Environment Principles</h3>
+                        <ul class="text-xs text-white space-y-3 font-medium">
+                            <li class="flex gap-2"><span>1.</span> <span>Commitment to Integrity & Ethics</span></li>
+                            <li class="flex gap-2"><span>2.</span> <span>Independent Oversight</span></li>
+                            <li class="flex gap-2"><span>3.</span> <span>Structures, Reporting & Authority</span></li>
+                            <li class="flex gap-2"><span>4.</span> <span>Commitment to Competence</span></li>
+                            <li class="flex gap-2"><span>5.</span> <span>Accountability for Internal Controls</span></li>
+                        </ul>
+                    </div>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-black text-amber-400 p-4 rounded-2xl shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-black text-black ml-4 uppercase tracking-tight">Environment</h2>
+                    </div>
+                    <p class="text-amber-600 font-extrabold mb-3 text-sm tracking-widest uppercase italic">"The Foundation"</p>
+                    <p class="text-slate-600 mb-6 leading-relaxed">The culture where doing the right thing is the only option.</p>
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 italic text-sm text-slate-700">
+                        <strong>Action:</strong> Review job duties and lead by example in the office.
+                    </div>
+                </div>
+
+                <!-- 2. Risk Assessment -->
+                <div class="control-card bg-white p-8 rounded-3xl border-t-8 gold-border">
+                    <div class="principles-overlay">
+                        <h3 class="text-amber-500 font-black text-sm uppercase mb-4 tracking-widest border-b border-amber-500/30 pb-2">Risk Assessment Principles</h3>
+                        <ul class="text-xs text-white space-y-3 font-medium">
+                            <li class="flex gap-2"><span>6.</span> <span>Specify Clear Objectives</span></li>
+                            <li class="flex gap-2"><span>7.</span> <span>Identify & Analyze Risks</span></li>
+                            <li class="flex gap-2"><span>8.</span> <span>Assess Fraud Risk</span></li>
+                            <li class="flex gap-2"><span>9.</span> <span>Identify & Analyze Significant Changes</span></li>
+                        </ul>
+                    </div>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-black text-amber-400 p-4 rounded-2xl shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-black text-black ml-4 uppercase tracking-tight">Risk Assessment</h2>
+                    </div>
+                    <p class="text-amber-600 font-extrabold mb-3 text-sm tracking-widest uppercase italic">"The Awareness"</p>
+                    <p class="text-slate-600 mb-6 leading-relaxed">Identifying what could go wrong before it happens.</p>
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 italic text-sm text-slate-700">
+                        <strong>Action:</strong> Monitor athletic gates and fundraisers closely.
+                    </div>
+                </div>
+
+                <!-- 3. Control Activities -->
+                <div class="control-card bg-white p-8 rounded-3xl border-t-8 gold-border">
+                    <div class="principles-overlay">
+                        <h3 class="text-amber-500 font-black text-sm uppercase mb-4 tracking-widest border-b border-amber-500/30 pb-2">Control Activities Principles</h3>
+                        <ul class="text-xs text-white space-y-3 font-medium">
+                            <li class="flex gap-2"><span>10.</span> <span>Select & Develop Control Activities</span></li>
+                            <li class="flex gap-2"><span>11.</span> <span>Select Controls for Technology</span></li>
+                            <li class="flex gap-2"><span>12.</span> <span>Deploy through Policies & Procedures</span></li>
+                        </ul>
+                    </div>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-black text-amber-400 p-4 rounded-2xl shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-black text-black ml-4 uppercase tracking-tight">Activities</h2>
+                    </div>
+                    <p class="text-amber-600 font-extrabold mb-3 text-sm tracking-widest uppercase italic">"The Procedures"</p>
+                    <p class="text-slate-600 mb-6 leading-relaxed">Daily actions like POs that act as safety nets.</p>
+                    <div class="bg-amber-50 p-4 rounded-2xl border border-amber-100 italic text-sm text-slate-700">
+                        <strong>The PO Rule:</strong> Create the PO <em>before</em> the order.
+                    </div>
+                </div>
+
+                <!-- 4. Information & Comm -->
+                <div class="control-card bg-white p-8 rounded-3xl border-t-8 gold-border">
+                    <div class="principles-overlay">
+                        <h3 class="text-amber-500 font-black text-sm uppercase mb-4 tracking-widest border-b border-amber-500/30 pb-2">Information & Communication</h3>
+                        <ul class="text-xs text-white space-y-3 font-medium">
+                            <li class="flex gap-2"><span>13.</span> <span>Use Relevant, Quality Information</span></li>
+                            <li class="flex gap-2"><span>14.</span> <span>Communicate Internally</span></li>
+                            <li class="flex gap-2"><span>15.</span> <span>Communicate Externally</span></li>
+                        </ul>
+                    </div>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-black text-amber-400 p-4 rounded-2xl shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-black text-black ml-4 uppercase tracking-tight">Communication</h2>
+                    </div>
+                    <p class="text-amber-600 font-extrabold mb-3 text-sm tracking-widest uppercase italic">"The Transparency"</p>
+                    <p class="text-slate-600 mb-6 leading-relaxed">Ensuring accurate data flows to those who need it.</p>
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 italic text-sm text-slate-700">
+                        <strong>Action:</strong> Share balance reports with sponsors monthly.
+                    </div>
+                </div>
+
+                <!-- 5. Monitoring -->
+                <div class="control-card bg-white p-8 rounded-3xl border-t-8 gold-border">
+                    <div class="principles-overlay">
+                        <h3 class="text-amber-500 font-black text-sm uppercase mb-4 tracking-widest border-b border-amber-500/30 pb-2">Monitoring Principles</h3>
+                        <ul class="text-xs text-white space-y-3 font-medium">
+                            <li class="flex gap-2"><span>16.</span> <span>Perform Ongoing Evaluations</span></li>
+                            <li class="flex gap-2"><span>17.</span> <span>Evaluate & Communicate Deficiencies</span></li>
+                        </ul>
+                    </div>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-black text-amber-400 p-4 rounded-2xl shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-black text-black ml-4 uppercase tracking-tight">Monitoring</h2>
+                    </div>
+                    <p class="text-amber-600 font-extrabold mb-3 text-sm tracking-widest uppercase italic">"The Health Check"</p>
+                    <p class="text-slate-600 mb-6 leading-relaxed">Reviewing our work to ensure the system stays healthy.</p>
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 italic text-sm text-slate-700">
+                        <strong>Action:</strong> Reconcile bank statements by the 15th.
+                    </div>
+                </div>
+
+                <!-- Why Summary Card (No Hover) -->
+                <div class="bg-black p-8 rounded-3xl border-t-8 gold-border text-white flex flex-col justify-center shadow-xl">
+                    <h2 class="text-2xl font-black mb-6 text-amber-400 uppercase tracking-wider underline decoration-amber-500/50">The "Why" Matters</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="mr-3 bg-amber-500 text-black rounded-full h-6 w-6 flex items-center justify-center text-[10px] font-black shrink-0 mt-1">✓</span>
+                            <span class="text-xs"><strong>Integrity:</strong> Clear trails prove excellence.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 bg-amber-500 text-black rounded-full h-6 w-6 flex items-center justify-center text-[10px] font-black shrink-0 mt-1">✓</span>
+                            <span class="text-xs"><strong>Students:</strong> Funds belong in the classroom.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 bg-amber-500 text-black rounded-full h-6 w-6 flex items-center justify-center text-[10px] font-black shrink-0 mt-1">✓</span>
+                            <span class="text-xs"><strong>Trust:</strong> Accurate reporting keeps us moving.</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="bg-slate-50 p-10 text-center border-t border-slate-200">
+            <p class="text-slate-400 text-xs font-bold uppercase tracking-[0.2em] mb-3">Excellence is a habit, not an act.</p>
+            <div class="flex items-center justify-center gap-4">
+                <div class="h-px bg-slate-300 w-12"></div>
+                <p class="text-black font-black text-sm uppercase tracking-tighter italic">Penn-Harris-Madison Business Office</p>
+                <div class="h-px bg-slate-300 w-12"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
